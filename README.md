@@ -63,7 +63,8 @@ Config lives at `%APPDATA%\holler\config.json` — mic, hotkeys, VAD sensitivity
 
 ## Requirements & honest scope
 
-- **Windows 10/11**, any microphone, ~1 GB disk. Python 3.10+ and Git for Windows (the bootstrap tells you exactly where to get them if they're missing). No GPU needed — CPU inference is many times realtime.
+- **Windows 10/11**, any microphone, ~1 GB disk. **Python 3.10-3.13** (3.12 recommended) and Git for Windows (the bootstrap tells you exactly where to get them if they're missing). No GPU needed — CPU inference is many times realtime.
+- Python 3.14+ and pre-release versions are not supported yet (no onnxruntime wheels). The Python install manager can install pre-release versions, so install 3.12 explicitly rather than taking its default.
 - English-only for now (that's the Parakeet model's scope, not a design choice).
 - Apps running **as Administrator** won't receive synthetic input from a non-elevated holler — that's Windows integrity levels, not a bug. Run holler elevated too if you must dictate into elevated windows.
 - Hotkey misbehaves in some app? Avoid Alt-family keys (a lone Alt tap opens menu bars; Right Alt is AltGr on many layouts — holler doesn't offer them). `F13`–`F19` are gold if your keyboard has them; `Scroll Lock` and `Pause` are excellent squatters otherwise.
